@@ -1,51 +1,35 @@
-package bincalc
+package main
 
 import (
 	"errors"
 	"fmt"
-	"strconv"
 	"strings"
 )
 
-func Tokenizer() {}
+func Tokenizer(input string) ([]string, error) {
+	ret := make([]string, 0)
+	token := ""
+	prevType := 0 // 0: num, 1: func, 2: operator, 3/4: l/r paren
+	// todo: check parenthesis count
+	// todo: check for mistyped operations, esp. boolean ones
+	for idx, cp := range input {
+		if idx == 0 {
+			prevType = charType(cp)
+		}
+		if prevType != charType(cp) {
+			ret = append(ret, token)
+			prevType = charType(cp)
+			token = ""
+		}
+
+		token += string(cp)
+
+	}
+	ret = append(ret, token)
+	return ret, nil
+}
 
 // or have tokens separated by spaces when entering args?
-
-/*
-type Token struct {
-	Text          string
-	Precedence    int
-	Associativity bool // false: left, true: right
-}
-
-// Will the functions inherently be left associative?
-// Will the functions inherently be lowest precedence
-
-func TokenType(token string) (Token, error) {
-	// Operators: + - * / ^ && || << >>
-	// Functions: !
-	operators := [10]Token{
-		Token{Text: "^", Precedence: 4, Associativity: true},
-		Token{Text: "*", Precedence: 3, Associativity: false},
-		Token{Text: "/", Precedence: 3, Associativity: false},
-		Token{Text: "+", Precedence: 2, Associativity: false},
-		Token{Text: "-", Precedence: 2, Associativity: false},
-		Token{Text: "&&", Precedence: 0, Associativity: false},
-		Token{Text: "||", Precedence: 0, Associativity: false},
-		Token{Text: "<<", Precedence: 0, Associativity: true},
-		Token{Text: ">>", Precedence: 0, Associativity: true},
-		//		Token{Text: "!", Precedence: 1, Associativity: false},
-	}
-
-	// Handle operator or function
-	for _, t := range operators {
-		if t.Text == token {
-			return t, nil
-		}
-	}
-	return Token{}, errors.New("Token out of range")
-}
-*/
 func inRangeNInc(low, high, test int) bool {
 	// Non-inclusive inRange
 	return (low < test) && (test < high)
@@ -56,16 +40,64 @@ func inRangeInc(low, high, test int) bool {
 	return (low <= test) && (test <= high)
 }
 
+func charType(char rune) int {
+	if charIsNumber(char) {
+		return 0
+	} else if charIsFunc(char) {
+		return 1
+	} else if charIsOperator(char) {
+		return 2
+	} else if charIsLParen(char) {
+		return 3
+	} else if charIsRParen(char) {
+		return 4
+	}
+	return -1
+}
+
+func charIsNumber(char rune) bool {
+	// If   not a number                        not lowercase                      not x (possible for 0x)
+	return (inRangeInc('0', '9', int(char)) || (inRangeInc('a', 'z', int(char)) || char == 'x'))
+}
+
+func charIsFunc(char rune) bool {
+	functions := []rune{'!'}
+	for _, elem := range functions {
+		if char == elem {
+			return true
+		}
+	}
+	return false
+}
+
+func charIsOperator(char rune) bool {
+	operators := []rune{'^', '*', '/', '+', '-', '&', '|', '<', '>'}
+	for _, elem := range operators {
+		if char == elem {
+			return true
+		}
+	}
+	return false
+}
+
+func charIsLParen(char rune) bool {
+	return char == '('
+}
+
+func charIsRParen(char rune) bool {
+	return char == ')'
+}
+
 func isNumber(token string) (bool, error) {
 	// Takes only lowercased strings
+	// TODO: Make the checking stronger: x only allowable on 0x cases or just as "x".
 	if len(token) <= 0 {
 		return false, errors.New("No length")
 	}
 
 	for _, cp := range token {
 		// CP is the unicode codepoint
-		// If not a number                  not lowercase                      not x (possible for 0x)
-		if !(inRangeInc(48, 57, int(cp)) || (inRangeInc(97, 102, int(cp)) || int(cp) == 120)) {
+		if !(charIsNumber(cp)) {
 			return false, nil
 		}
 	}
@@ -73,7 +105,7 @@ func isNumber(token string) (bool, error) {
 
 }
 
-func greatestPrecedence(opStack []string) bool {
+func greatestPrecedence(opStack []string, token string) bool {
 	opPrec := map[string]int{
 		"^":  4,
 		"*":  3,
@@ -85,30 +117,31 @@ func greatestPrecedence(opStack []string) bool {
 		"<<": 0,
 		">>": 0,
 	}
-	rightAs := [3]string{"^", "<<", ">>"}
-	topPrec := opPrec[opStack[0]]
-	for _, op := range opStack {
-		currPrec := opPrec[op]
+	rightAs := []string{"^", "<<", ">>"}
+	topPrec := opPrec[token]
+	currPrec := opPrec[opStack[0]]
 
-		isRightAs := false
-		for _, r := range rightAs {
-			if r == op {
-				isRightAs = true
-				break
-			}
-		}
-
-		if !((currPrec < topPrec) || ((currPrec == topPrec) && !isRightAs)) {
-			return false
+	isRightAs := false
+	for _, r := range rightAs {
+		if r == token {
+			isRightAs = true
 		}
 	}
-	return true
+	/*
+		fmt.Println(op, opStack[0])
+		fmt.Println(currPrec, topPrec)
+		fmt.Println(currPrec < topPrec)
+	*/
+	return (currPrec > topPrec) || ((currPrec == topPrec) && !isRightAs)
 }
 
+// TODO: How exactly do I make a shuntyard integrated w/ evaluator? (mostly in operation step)
+// Answer: instead of moving operators to ret stack, evaluate the operator
 func ShuntYard(tokens []string) ([]string, error) {
 	ret := make([]string, 0)
 	operatorStack := make([]string, 0)
 	var operator string
+
 	for i := 0; i < len(tokens); i++ {
 		token := tokens[i]
 		token = strings.ToLower(token)
@@ -118,21 +151,33 @@ func ShuntYard(tokens []string) ([]string, error) {
 		if err != nil {
 			fmt.Println(err)
 		}
-
+		fmt.Println("pass no", i)
+		fmt.Println(token)
+		//fmt.Println(ret, operatorStack)
+		//fmt.Println()
 		// case: number
 		if isNum {
-			ret = append([]string{token}, ret...)
+			fmt.Println("n")
+			ret = append(ret, token)
+			// case: function
 		} else if token == "!" {
+			fmt.Println("f")
 			operatorStack = append([]string{token}, operatorStack...)
+			// case: operator
 		} else if token != "(" && token != ")" {
-			for len(operatorStack) >= 0 && (greatestPrecedence(operatorStack) && operatorStack[0] != "(") {
+			fmt.Println("o")
+			for len(operatorStack) > 1 && (greatestPrecedence(operatorStack, token) && operatorStack[0] != "(") {
 				operator, operatorStack = operatorStack[0], operatorStack[1:]
 				ret = append(ret, operator)
 			}
 			operatorStack = append([]string{token}, operatorStack...)
+			// case: lparen
 		} else if token == "(" {
+			fmt.Println("lp")
 			operatorStack = append([]string{token}, operatorStack...)
+			// case: rparen
 		} else if token == ")" {
+			fmt.Println("rp")
 			for operatorStack[0] != "(" {
 				operator, operatorStack = operatorStack[0], operatorStack[1:]
 				ret = append(ret, operator)
@@ -140,13 +185,12 @@ func ShuntYard(tokens []string) ([]string, error) {
 					return nil, errors.New("Mismatched parenthesis")
 				}
 			}
-			// todo: if runs out w/o finding left paren, then mismatched
 			if operatorStack[0] == "(" {
 				operatorStack = operatorStack[1:]
 			}
 			if operatorStack[0] == "!" {
 				operator, operatorStack = operatorStack[0], operatorStack[1:]
-				ret = append(ret, operator)
+				ret = append([]string{operator}, ret...)
 			}
 
 		}
@@ -156,7 +200,6 @@ func ShuntYard(tokens []string) ([]string, error) {
 			return nil, errors.New("Mismatched parenthesis")
 		}
 		for len(operatorStack) > 0 {
-			// todo: if top is parenthesis, mismatched
 			operator, operatorStack = operatorStack[0], operatorStack[1:]
 			ret = append(ret, operator)
 		}
@@ -165,107 +208,25 @@ func ShuntYard(tokens []string) ([]string, error) {
 	return ret, nil
 }
 
-func pow(base, pow int) int {
-	ret := base
-	for x := 1; x < pow; x++ {
-		ret *= base
+func main() {
+	/*
+		x := greatestPrecedence([]string{"*", "+"})
+		fmt.Println(x)
+	*/
+	x, err := ShuntYard([]string{"3", "+", "4", "*", "2", "/", "(", "1", "-", "5", ")", "^", "2", "^", "3"})
+	if err != nil {
+		fmt.Println(err)
 	}
-	return ret
-}
+	fmt.Println(x)
 
-func RPNInterpret(tokens []string) (int, error) {
-	evalStack := make([]int, 0)
-	var arg1 int
-	var arg2 int
-	for len(tokens) > 0 {
-		top, tokens := tokens[0], tokens[1:]
-		isNum, err := isNumber(top)
+	/*
+		x, err := Tokenizer("32 + 4 * 2 / (1 - 5) ^ 2 ^ 3")
+		//x, err := Tokenizer("3+4")
+		//x, err := Tokenizer("32+4*2/(1-5)^2^3")
 		if err != nil {
-			errors.New("Bad token")
+			fmt.Println(err)
 		}
-		if isNum {
-			iConv, err := strconv.Atoi(top)
-			if err != nil {
-				errors.New("Bad int conversion")
-			}
-			evalStack = append([]int{iConv}, evalStack...)
-		} else {
-			switch top {
-			case "+":
-				if len(evalStack) < 2 {
-					return -1, errors.New("Bad expr")
-				}
-				arg1, evalStack = evalStack[0], evalStack[1:]
-				arg2, evalStack = evalStack[0], evalStack[1:]
-				evalStack = append([]int{arg1 + arg2}, evalStack...)
-			case "*":
-				if len(evalStack) < 2 {
-					return -1, errors.New("Bad expr")
-				}
-				arg1, evalStack = evalStack[0], evalStack[1:]
-				arg2, evalStack = evalStack[0], evalStack[1:]
-				evalStack = append([]int{arg1 * arg2}, evalStack...)
-			case "-":
-				if len(evalStack) < 2 {
-					return -1, errors.New("Bad expr")
-				}
-				arg1, evalStack = evalStack[0], evalStack[1:]
-				arg2, evalStack = evalStack[0], evalStack[1:]
-				evalStack = append([]int{arg2 - arg1}, evalStack...)
-			case "^":
-				if len(evalStack) < 2 {
-					return -1, errors.New("Bad expr")
-				}
-				arg1, evalStack = evalStack[0], evalStack[1:]
-				arg2, evalStack = evalStack[0], evalStack[1:]
-				evalStack = append([]int{pow(arg2, arg1)}, evalStack...)
-			case "/":
-				if len(evalStack) < 2 {
-					return -1, errors.New("Bad expr")
-				}
-				arg1, evalStack = evalStack[0], evalStack[1:]
-				if arg1 == 0 {
-					return -1, errors.New("Cannot div by 0")
-				}
-				arg2, evalStack = evalStack[0], evalStack[1:]
-				evalStack = append([]int{arg2 / arg1}, evalStack...)
-			case "&&":
-				if len(evalStack) < 2 {
-					return -1, errors.New("Bad expr")
-				}
-				arg1, evalStack = evalStack[0], evalStack[1:]
-				arg2, evalStack = evalStack[0], evalStack[1:]
-				evalStack = append([]int{arg2 & arg1}, evalStack...)
-			case "||":
-				if len(evalStack) < 2 {
-					return -1, errors.New("Bad expr")
-				}
-				arg1, evalStack = evalStack[0], evalStack[1:]
-				arg2, evalStack = evalStack[0], evalStack[1:]
-				evalStack = append([]int{arg2 | arg1}, evalStack...)
-			case ">>":
-				if len(evalStack) < 2 {
-					return -1, errors.New("Bad expr")
-				}
-				arg1, evalStack = evalStack[0], evalStack[1:]
-				arg2, evalStack = evalStack[0], evalStack[1:]
-				evalStack = append([]int{arg2 >> arg1}, evalStack...)
-			case "<<":
-				if len(evalStack) < 2 {
-					return -1, errors.New("Bad expr")
-				}
-				arg1, evalStack = evalStack[0], evalStack[1:]
-				arg2, evalStack = evalStack[0], evalStack[1:]
-				evalStack = append([]int{arg2 << arg1}, evalStack...)
-			default:
-				return -1, errors.New("unknown command")
-			}
-		}
-
-	}
-
-	if len(evalStack) == 1 {
-		return evalStack[0], nil
-	}
-	return -1, errors.New("Something went wrong")
+		fmt.Println(x)
+		fmt.Println(len(x))
+	*/
 }

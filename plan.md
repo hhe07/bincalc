@@ -78,3 +78,7 @@ if there are no more tokens to read then:
         /* If the operator token on the top of the stack is a parenthesis, then there are mismatched parentheses. */
         pop the operator from the operator stack onto the output queue.
 exit.
+
+However,relative order of precedence followed is NOT > XOR > AND > OR in most of the languages especially those derived from C
+
+https://math.stackexchange.com/questions/3841638/in-boolean-algebra-what-is-the-order-of-precedence
