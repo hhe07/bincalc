@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -10,20 +11,39 @@ func Tokenizer(input string) ([]string, error) {
 	ret := make([]string, 0)
 	token := ""
 	prevType := 0 // 0: num, 1: func, 2: operator, 3/4: l/r paren
+	lParen, rParen := 0, 0
 	// todo: check parenthesis count
 	// todo: check for mistyped operations, esp. boolean ones
 	for idx, cp := range input {
 		if idx == 0 {
 			prevType = charType(cp)
 		}
+		if (prevType == 2) && (charType(cp) == 2) {
+			if input[idx - 1] != byte(cp) {
+				return nil, errors.New("bad operator")
+			}
+		}
+
+		if charType(cp) == 3{
+			lParen++
+		}
+		if charType(cp) == 4{
+			rParen++
+		}
+
 		if prevType != charType(cp) {
-			ret = append(ret, token)
+			if prevType != -1{
+				ret = append(ret, token)
+			}
 			prevType = charType(cp)
 			token = ""
 		}
 
 		token += string(cp)
 
+	}
+	if lParen != rParen{
+		return nil, errors.New("mismatched paren")
 	}
 	ret = append(ret, token)
 	return ret, nil
@@ -95,6 +115,10 @@ func isNumber(token string) (bool, error) {
 		return false, errors.New("No length")
 	}
 
+	if token == "x"{
+		return false, nil
+	}
+
 	for _, cp := range token {
 		// CP is the unicode codepoint
 		if !(charIsNumber(cp)) {
@@ -127,21 +151,13 @@ func greatestPrecedence(opStack []string, token string) bool {
 			isRightAs = true
 		}
 	}
-	/*
-		fmt.Println(op, opStack[0])
-		fmt.Println(currPrec, topPrec)
-		fmt.Println(currPrec < topPrec)
-	*/
 	return (currPrec > topPrec) || ((currPrec == topPrec) && !isRightAs)
 }
 
-// TODO: How exactly do I make a shuntyard integrated w/ evaluator? (mostly in operation step)
-// Answer: instead of moving operators to ret stack, evaluate the operator
-func ShuntYard(tokens []string) ([]string, error) {
-	ret := make([]string, 0)
+func ShuntYard(tokens []string, prevRes int) (int, error) {
+	ret := make([]int, 0)
 	operatorStack := make([]string, 0)
 	var operator string
-
 	for i := 0; i < len(tokens); i++ {
 		token := tokens[i]
 		token = strings.ToLower(token)
@@ -151,38 +167,35 @@ func ShuntYard(tokens []string) ([]string, error) {
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println("pass no", i)
-		fmt.Println(token)
-		//fmt.Println(ret, operatorStack)
-		//fmt.Println()
 		// case: number
 		if isNum {
-			fmt.Println("n")
-			ret = append(ret, token)
+			iConv, err := strconv.Atoi(token)
+			if err != nil {
+				return -1, errors.New("Bad int conversion")
+			}
+			ret = append(ret, iConv)
 			// case: function
+		} else if token == "x"{
+			ret = append(ret, prevRes)
 		} else if token == "!" {
-			fmt.Println("f")
 			operatorStack = append([]string{token}, operatorStack...)
 			// case: operator
 		} else if token != "(" && token != ")" {
-			fmt.Println("o")
 			for len(operatorStack) > 1 && (greatestPrecedence(operatorStack, token) && operatorStack[0] != "(") {
 				operator, operatorStack = operatorStack[0], operatorStack[1:]
-				ret = append(ret, operator)
+				ret = append(ret[0:len(ret)-2], operatorEval(ret, operator)) 
 			}
 			operatorStack = append([]string{token}, operatorStack...)
 			// case: lparen
 		} else if token == "(" {
-			fmt.Println("lp")
 			operatorStack = append([]string{token}, operatorStack...)
 			// case: rparen
 		} else if token == ")" {
-			fmt.Println("rp")
 			for operatorStack[0] != "(" {
 				operator, operatorStack = operatorStack[0], operatorStack[1:]
-				ret = append(ret, operator)
+				ret = append(ret[0:len(ret)-2], operatorEval(ret, operator)) 
 				if (operatorStack[0] != "(") && (len(operatorStack) == 1) {
-					return nil, errors.New("Mismatched parenthesis")
+					return -1, errors.New("Mismatched parenthesis")
 				}
 			}
 			if operatorStack[0] == "(" {
@@ -190,43 +203,61 @@ func ShuntYard(tokens []string) ([]string, error) {
 			}
 			if operatorStack[0] == "!" {
 				operator, operatorStack = operatorStack[0], operatorStack[1:]
-				ret = append([]string{operator}, ret...)
+				ret = append(ret[0:len(ret)-2], operatorEval(ret, operator)) 
 			}
 
 		}
 	}
 	if len(operatorStack) > 0 {
 		if (operatorStack[0] == "(") || (operatorStack[0] == ")") {
-			return nil, errors.New("Mismatched parenthesis")
+			return -1, errors.New("Mismatched parenthesis")
 		}
 		for len(operatorStack) > 0 {
-			operator, operatorStack = operatorStack[0], operatorStack[1:]
-			ret = append(ret, operator)
+			operator, operatorStack = operatorStack[0], operatorStack[1:] 
+			ret = append(ret[0:len(ret)-2], operatorEval(ret, operator)) 
 		}
 	}
 
-	return ret, nil
+	return ret[0], nil
 }
 
-func main() {
-	/*
-		x := greatestPrecedence([]string{"*", "+"})
-		fmt.Println(x)
-	*/
-	x, err := ShuntYard([]string{"3", "+", "4", "*", "2", "/", "(", "1", "-", "5", ")", "^", "2", "^", "3"})
-	if err != nil {
-		fmt.Println(err)
+func pow(base, pow int) int {
+	ret := base
+	for x := 1; x < pow; x++ {
+		ret *= base
 	}
-	fmt.Println(x)
+	return ret
+}
 
-	/*
-		x, err := Tokenizer("32 + 4 * 2 / (1 - 5) ^ 2 ^ 3")
-		//x, err := Tokenizer("3+4")
-		//x, err := Tokenizer("32+4*2/(1-5)^2^3")
-		if err != nil {
-			fmt.Println(err)
-		}
-		fmt.Println(x)
-		fmt.Println(len(x))
-	*/
+func operatorEval(numStack []int, operator string) int {
+	if len(numStack) < 2 {
+		errors.New("bad numstack")
+	}
+	var arg1, arg2 int
+	arg1 = numStack[len(numStack)-1]
+	arg2 = numStack[len(numStack)-2]
+	switch operator {
+	// TODO: ! operator
+	case "+":
+		return arg1 + arg2
+	case "*":
+		return arg1 * arg2
+	case "-":
+		return arg2 - arg1
+	case "^":
+		return pow(arg2, arg1)
+	case "/":
+		return arg2 / arg1
+	case "&&":
+		return arg2 & arg1
+	case "||":
+		return arg2 | arg1
+	case ">>":
+		return arg2 >> arg1
+	case "<<":
+		return arg2 << arg1
+	default:
+		errors.New("bad operator")
+	}
+	return -1
 }
