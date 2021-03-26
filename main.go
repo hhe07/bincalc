@@ -3,17 +3,22 @@ package main
 
 import (
 	"fmt"
+	"bufio"
+	"os"
 )
 // todo: if time: take args and allow for verbosity?
 
 func main() {
 	var res = 0
+	scanner := bufio.NewScanner(os.Stdin)
 	for true{
 		// take input
-		var x string
 		fmt.Print("> ")
-		fmt.Scanln(&x)
-		if x == ""{
+		scanner.Scan()
+		x := scanner.Text()
+		if x == "exit"{
+			break
+		} else if x == ""{
 			continue
 		} else if x == "x"{
 			fmt.Println(res)
@@ -24,14 +29,14 @@ func main() {
 			fmt.Println(err)
 			break
 		}
-		res, err = ShuntYard(tkns, res) // should previous res be a ptr?
+		res, err = ShuntYard(tkns, res)
 		if err != nil{
 			fmt.Println(err)
 			break
 		}
 		fmt.Println(res)
 
+
 	}
-	
-	//STest()
+
 }
