@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="shuntdiag.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="150.56487"
+     inkscape:cy="325.19302"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1839"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="7.1815472"
+       y="13.13988"
+       id="text817"><tspan
+         sodipodi:role="line"
+         id="tspan815"
+         x="7.1815472"
+         y="13.13988"
+         style="stroke-width:0.26458332">Shunting Yard (basic)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="17.372519"
+       y="29.99774"
+       id="text821"><tspan
+         sodipodi:role="line"
+         id="tspan819"
+         x="17.372519"
+         y="32.762379"
+         style="stroke-width:0.26458332" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="14.967093"
+       y="34.808594"
+       id="text831"><tspan
+         sodipodi:role="line"
+         id="tspan829"
+         x="14.967093"
+         y="34.808594"
+         style="stroke-width:0.26458332">for token in input:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="46.737064"
+       y="63.174728"
+       id="text835"><tspan
+         sodipodi:role="line"
+         id="tspan833"
+         x="46.737064"
+         y="63.174728"
+         style="stroke-width:0.26458332">number?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="79.65036"
+       y="62.070076"
+       id="text839"><tspan
+         sodipodi:role="line"
+         id="tspan837"
+         x="79.65036"
+         y="62.070076"
+         style="stroke-width:0.26458332">to output stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="45.974407"
+       y="98.71479"
+       id="text843"><tspan
+         sodipodi:role="line"
+         id="tspan841"
+         x="45.974407"
+         y="98.71479"
+         style="stroke-width:0.26458332">function?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="76.44313"
+       y="98.686005"
+       id="text847"><tspan
+         sodipodi:role="line"
+         id="tspan845"
+         x="76.44313"
+         y="98.686005"
+         style="stroke-width:0.26458332">to operator stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="46.508945"
+       y="133.22133"
+       id="text851"><tspan
+         sodipodi:role="line"
+         id="tspan849"
+         x="46.508945"
+         y="133.22133"
+         style="stroke-width:0.26458332">operator?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="77.779472"
+       y="129.68927"
+       id="text855"><tspan
+         sodipodi:role="line"
+         id="tspan853"
+         x="77.779472"
+         y="129.68927"
+         style="stroke-width:0.26458332">while operator at top of opstack,</tspan><tspan
+         sodipodi:role="line"
+         x="77.779472"
+         y="132.68927"
+         style="stroke-width:0.26458332"
+         id="tspan859">and that operator has greater </tspan><tspan
+         sodipodi:role="line"
+         x="77.779472"
+         y="135.68927"
+         style="stroke-width:0.26458332"
+         id="tspan863">precedence:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="83.392128"
+       y="146.25999"
+       id="text867"><tspan
+         sodipodi:role="line"
+         id="tspan865"
+         x="83.392128"
+         y="146.25999"
+         style="stroke-width:0.26458332">pop from operator stack to </tspan><tspan
+         sodipodi:role="line"
+         x="83.392128"
+         y="149.25999"
+         style="stroke-width:0.26458332"
+         id="tspan869">output stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="45.974415"
+       y="166.12427"
+       id="text873"><tspan
+         sodipodi:role="line"
+         id="tspan871"
+         x="45.974415"
+         y="166.12427"
+         style="stroke-width:0.26458332">left paren?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="78.848564"
+       y="169.51244"
+       id="text877"><tspan
+         sodipodi:role="line"
+         id="tspan875"
+         x="78.848564"
+         y="169.51244"
+         style="stroke-width:0.26458332">to operator stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="45.172596"
+       y="202.11931"
+       id="text881"><tspan
+         sodipodi:role="line"
+         id="tspan879"
+         x="45.172596"
+         y="202.11931"
+         style="stroke-width:0.26458332">right paren?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="74.572235"
+       y="193.03217"
+       id="text885"><tspan
+         sodipodi:role="line"
+         x="74.572235"
+         y="193.03217"
+         style="stroke-width:0.26458332"
+         id="tspan891">while top operator on opstack isn't left paren:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="95.272232"
+       y="203.67593"
+       id="text867-5"><tspan
+         sodipodi:role="line"
+         id="tspan865-7"
+         x="95.272232"
+         y="203.67593"
+         style="stroke-width:0.26458332">pop from operator stack to </tspan><tspan
+         sodipodi:role="line"
+         x="95.272232"
+         y="206.67593"
+         style="stroke-width:0.26458332"
+         id="tspan869-2">output stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="75.374054"
+       y="219.75911"
+       id="text918"><tspan
+         sodipodi:role="line"
+         id="tspan916"
+         x="75.374054"
+         y="219.75911"
+         style="stroke-width:0.26458332">if does not find left paren:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="135.23021"
+       y="225.90631"
+       id="text922"><tspan
+         sodipodi:role="line"
+         id="tspan920"
+         x="135.23021"
+         y="225.90631"
+         style="stroke-width:0.26458332">paren mismatch</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="74.8395"
+       y="234.7262"
+       id="text926"><tspan
+         sodipodi:role="line"
+         id="tspan924"
+         x="74.8395"
+         y="234.7262"
+         style="stroke-width:0.26458332">if left paren only left on top of opstack:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="135.51355"
+       y="240.8734"
+       id="text930"><tspan
+         sodipodi:role="line"
+         id="tspan928"
+         x="135.51355"
+         y="240.8734"
+         style="stroke-width:0.26458332">discard</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="74.57225"
+       y="247.02061"
+       id="text934"><tspan
+         sodipodi:role="line"
+         id="tspan932"
+         x="74.57225"
+         y="247.02061"
+         style="stroke-width:0.26458332">if function at top of operator stack:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="135.37596"
+       y="254.10326"
+       id="text938"><tspan
+         sodipodi:role="line"
+         id="tspan936"
+         x="135.37596"
+         y="254.10326"
+         style="stroke-width:0.26458332">pop onto output stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-26.994223"
+       y="266.26401"
+       id="text942"><tspan
+         sodipodi:role="line"
+         id="tspan940"
+         x="-26.994223"
+         y="266.26401"
+         style="stroke-width:0.26458332">cleanup</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="11.225314"
+       y="272.14392"
+       id="text946"><tspan
+         sodipodi:role="line"
+         id="tspan944"
+         x="11.225314"
+         y="272.14392"
+         style="stroke-width:0.26458332">if no more tokens:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="24.856058"
+       y="278.82565"
+       id="text950"><tspan
+         sodipodi:role="line"
+         id="tspan948"
+         x="24.856058"
+         y="278.82565"
+         style="stroke-width:0.26458332">for operators in opstack:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="44.366741"
+       y="285.24011"
+       id="text954"><tspan
+         sodipodi:role="line"
+         id="tspan952"
+         x="44.366741"
+         y="285.24011"
+         style="stroke-width:0.26458332">pop operator onto output stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="13.63074"
+       y="304.75079"
+       id="text958"><tspan
+         sodipodi:role="line"
+         id="tspan956"
+         x="13.63074"
+         y="304.75079"
+         style="stroke-width:0.26458332">return output stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="24.588793"
+       y="292.18912"
+       id="text962"><tspan
+         sodipodi:role="line"
+         id="tspan960"
+         x="24.588793"
+         y="292.18912"
+         style="stroke-width:0.26458332">if extra left paren:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="47.841236"
+       y="298.3363"
+       id="text966"><tspan
+         sodipodi:role="line"
+         id="tspan964"
+         x="47.841236"
+         y="298.3363"
+         style="stroke-width:0.26458332">paren mismatch</tspan></text>
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.08103523;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968"
+       width="47.325672"
+       height="17.658756"
+       x="11.483108"
+       y="25.17741" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985"
+       width="24.588797"
+       height="24.588797"
+       x="70.719101"
+       y="-8.2835541"
+       transform="rotate(45)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985-4"
+       width="24.588797"
+       height="24.588797"
+       x="95.307899"
+       y="16.305229"
+       transform="rotate(45)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985-4-6"
+       width="24.588797"
+       height="24.588797"
+       x="119.89671"
+       y="40.894104"
+       transform="rotate(45)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.09871078;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3"
+       width="70.293175"
+       height="17.641083"
+       x="76.04158"
+       y="122.20508" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985-4-6-8"
+       width="24.588797"
+       height="24.588797"
+       x="144.4855"
+       y="65.482903"
+       transform="rotate(45)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985-4-6-8-9"
+       width="24.588797"
+       height="24.588797"
+       x="169.0743"
+       y="90.071678"
+       transform="rotate(45)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.0993046;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-7"
+       width="97.821342"
+       height="12.829638"
+       x="73.25058"
+       y="185.10666" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.13557045;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985-4-6-8-9-4"
+       width="33.33514"
+       height="33.33514"
+       x="633.83936"
+       y="530.94983"
+       transform="matrix(0.98330809,0.18194832,-0.98330809,0.18194832,0,0)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.20110448;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985-4-6-8-9-4-9"
+       width="49.449173"
+       height="49.449173"
+       x="980.50146"
+       y="874.25946"
+       transform="matrix(0.99244916,0.1226567,-0.99244916,0.1226567,0,0)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.20110448;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985-4-6-8-9-4-9-2"
+       width="49.449173"
+       height="49.449173"
+       x="1029.9506"
+       y="923.70862"
+       transform="matrix(0.99244916,0.1226567,-0.99244916,0.1226567,0,0)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.20110448;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985-4-6-8-9-4-9-2-9"
+       width="49.449173"
+       height="49.449173"
+       x="1088.8965"
+       y="1060.3503"
+       transform="matrix(0.99244916,0.1226567,-0.99244916,0.1226567,0,0)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.06305987;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-7-6"
+       width="64.983444"
+       height="7.7877612"
+       x="21.897629"
+       y="273.19452" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.20110448;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect985-4-6-8-9-4-9-2-9-6"
+       width="49.449173"
+       height="49.449173"
+       x="1180.1929"
+       y="1145.9912"
+       transform="matrix(0.99244916,0.1226567,-0.99244916,0.1226567,0,0)" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.06738747;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-73"
+       width="44.933891"
+       height="12.861554"
+       x="72.280106"
+       y="55.906578"
+       ry="6.4307771" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.06738747;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-73-4"
+       width="44.933895"
+       height="12.861554"
+       x="73.215546"
+       y="90.117081"
+       ry="6.4307771" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.0813161;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-73-6"
+       width="65.499718"
+       height="12.847626"
+       x="81.507858"
+       y="139.83617"
+       ry="6.4238129" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.06738747;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-73-3"
+       width="44.933895"
+       height="12.861554"
+       x="77.224586"
+       y="159.33989"
+       ry="6.4307771" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.07964602;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-73-8"
+       width="62.828693"
+       height="12.849296"
+       x="89.257843"
+       y="198.36737"
+       ry="6.4246478" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.06738747;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-73-9"
+       width="44.933895"
+       height="12.861554"
+       x="133.95082"
+       y="217.9967"
+       ry="6.4307771" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.06738747;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-73-89"
+       width="44.933895"
+       height="12.861554"
+       x="133.95082"
+       y="230.85826"
+       ry="6.4307771" />
+    <rect
+       style="opacity:0.5;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.06738747;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect968-3-73-7"
+       width="44.933895"
+       height="12.861554"
+       x="133.95082"
+       y="243.71982"
+       ry="6.4307771" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="155.01633"
+       y="131.82744"
+       id="text896"><tspan
+         sodipodi:role="line"
+         id="tspan894"
+         x="155.01633"
+         y="131.82744"
+         style="stroke-width:0.26458332">condition in diamond, i/o in parallelogram, other ops rect. </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="168.91434"
+       y="148.39815"
+       id="text900"><tspan
+         sodipodi:role="line"
+         id="tspan898"
+         x="168.91434"
+         y="148.39815"
+         style="stroke-width:0.26458332">start/end in circle</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611107px;line-height:3px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="169.18161"
+       y="159.3562"
+       id="text904"><tspan
+         sodipodi:role="line"
+         id="tspan902"
+         x="169.18161"
+         y="159.3562"
+         style="stroke-width:0.26458332">somehow indicate variables passed in</tspan></text>
+  </g>
+</svg>
